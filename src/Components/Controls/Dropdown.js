@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Input.css';
+import uuid from 'react-uuid';
 import Icon from '../../Images/Icon.svg';
 
 function Dropdown({ options }) {
@@ -20,9 +21,9 @@ function Dropdown({ options }) {
 			{open ? (
 				<div className='dropdown-content'>
 					<ul className='dropdown-ul'>
-						{options.map((option, i) => (
+						{options.map(option => (
 							<li
-								key={i}
+								key={uuid()}
 								className={selected === option ? 'active' : null}
 								onClick={() => select(option)}
 							>
